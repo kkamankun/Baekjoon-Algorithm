@@ -12,8 +12,8 @@ for i in range(n):
             cnt = 0
     print(sum)
     
- # 다른 풀이
- import sys
+# 다른 풀이
+import sys
 
 n = int(input())
 for i in range(n):
