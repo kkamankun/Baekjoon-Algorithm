@@ -14,3 +14,15 @@ for i in range(1, N):
     memo[i][2] = min(memo[i-1][0], memo[i-1][1]) + memo[i][2]
 
 print(min(memo[N-1][0], memo[N-1][1], memo[N-1][2]))
+
+# 다른 풀이
+memo = []
+N = int(input())
+memo = [list(map(int, input().split()))]
+for i in range(1, N):  # 초기화
+    c1, c2, c3 = map(int, input().split())
+    nxt_c1 = min(memo[i-1][1], memo[i-1][2]) + c1
+    nxt_c2 = min(memo[i-1][0], memo[i-1][2]) + c2
+    nxt_c3 = min(memo[i-1][0], memo[i-1][1]) + c3
+    memo.append([nxt_c1, nxt_c2, nxt_c3])
+print(min(memo[N-1]))
